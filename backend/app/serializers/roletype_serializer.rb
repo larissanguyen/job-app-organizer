@@ -1,3 +1,4 @@
 class RoletypeSerializer < ActiveModel::Serializer
-  attributes :id
+  attributes :id, :title
+  has_many :jobs
 end

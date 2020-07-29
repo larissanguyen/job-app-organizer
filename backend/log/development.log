@@ -2195,3 +2195,314 @@ Migrating to CreateCauseJobs (20200729064007)
   [1m[36mCause Load (0.3ms)[0m  [1m[34mSELECT "causes".* FROM "causes" INNER JOIN "cause_jobs" ON "causes"."id" = "cause_jobs"."cause_id" WHERE "cause_jobs"."job_id" = ? LIMIT ?[0m  [["job_id", "1"], ["LIMIT", 11]]
   [1m[36mCause Load (0.2ms)[0m  [1m[34mSELECT "causes".* FROM "causes"[0m
   [1m[36mJob Load (0.4ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs" INNER JOIN "cause_jobs" ON "jobs"."id" = "cause_jobs"."job_id" WHERE "cause_jobs"."cause_id" = ? LIMIT ?[0m  [["cause_id", "1"], ["LIMIT", 11]]
+Started GET "/api/v1/jobs" for ::1 at 2020-07-29 11:49:47 -0400
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::JobsController#index as */*
+  [1m[36mJob Load (0.8ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mJobTask Load (5.1ms)[0m  [1m[34mSELECT "job_tasks".* FROM "job_tasks" WHERE "job_tasks"."job_id" = ?[0m  [["job_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers] No serializer found for resource: #<JobTask id: 1, complete: nil, job_id: 1, task_id: 1, created_at: "2020-07-29 06:40:52", updated_at: "2020-07-29 06:40:52">
+[active_model_serializers]   [1m[36mTask Load (5.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" INNER JOIN "job_tasks" ON "tasks"."id" = "job_tasks"."task_id" WHERE "job_tasks"."job_id" = ?[0m  [["job_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mRoletype Load (0.5ms)[0m  [1m[34mSELECT "roletypes".* FROM "roletypes" WHERE "roletypes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mJobTask Load (0.1ms)[0m  [1m[34mSELECT "job_tasks".* FROM "job_tasks" WHERE "job_tasks"."job_id" = ?[0m  [["job_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers] No serializer found for resource: #<JobTask id: 2, complete: nil, job_id: 2, task_id: 1, created_at: "2020-07-29 06:40:52", updated_at: "2020-07-29 06:40:52">
+[active_model_serializers]   [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" INNER JOIN "job_tasks" ON "tasks"."id" = "job_tasks"."task_id" WHERE "job_tasks"."job_id" = ?[0m  [["job_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mRoletype Load (0.1ms)[0m  [1m[34mSELECT "roletypes".* FROM "roletypes" WHERE "roletypes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers] No serializer found for resource: #<JobTask id: 1, complete: nil, job_id: 1, task_id: 1, created_at: "2020-07-29 06:40:52", updated_at: "2020-07-29 06:40:52">
+[active_model_serializers] No serializer found for resource: #<JobTask id: 2, complete: nil, job_id: 2, task_id: 1, created_at: "2020-07-29 06:40:52", updated_at: "2020-07-29 06:40:52">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (153.01ms)
+Completed 200 OK in 223ms (Views: 182.6ms | ActiveRecord: 17.0ms | Allocations: 64971)
+
+
+Started GET "/api/v1/jobs" for ::1 at 2020-07-29 16:23:15 -0400
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::JobsController#index as */*
+  [1m[36mJob Load (0.7ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mJobTask Load (0.6ms)[0m  [1m[34mSELECT "job_tasks".* FROM "job_tasks" WHERE "job_tasks"."job_id" = ?[0m  [["job_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers] No serializer found for resource: #<JobTask id: 1, complete: nil, job_id: 1, task_id: 1, created_at: "2020-07-29 06:40:52", updated_at: "2020-07-29 06:40:52">
+[active_model_serializers]   [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" INNER JOIN "job_tasks" ON "tasks"."id" = "job_tasks"."task_id" WHERE "job_tasks"."job_id" = ?[0m  [["job_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mCauseJob Load (1.3ms)[0m  [1m[34mSELECT "cause_jobs".* FROM "cause_jobs" WHERE "cause_jobs"."job_id" = ?[0m  [["job_id", "1"]]
+[active_model_serializers]   ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers] No serializer found for resource: #<CauseJob id: 1, cause_id: "1", job_id: "1", created_at: "2020-07-29 06:41:49", updated_at: "2020-07-29 06:41:49">
+[active_model_serializers]   [1m[36mCause Load (0.7ms)[0m  [1m[34mSELECT "causes".* FROM "causes" INNER JOIN "cause_jobs" ON "causes"."id" = "cause_jobs"."cause_id" WHERE "cause_jobs"."job_id" = ?[0m  [["job_id", "1"]]
+[active_model_serializers]   ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mRoletype Load (0.8ms)[0m  [1m[34mSELECT "roletypes".* FROM "roletypes" WHERE "roletypes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mJobTask Load (0.1ms)[0m  [1m[34mSELECT "job_tasks".* FROM "job_tasks" WHERE "job_tasks"."job_id" = ?[0m  [["job_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers] No serializer found for resource: #<JobTask id: 2, complete: nil, job_id: 2, task_id: 1, created_at: "2020-07-29 06:40:52", updated_at: "2020-07-29 06:40:52">
+[active_model_serializers]   [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" INNER JOIN "job_tasks" ON "tasks"."id" = "job_tasks"."task_id" WHERE "job_tasks"."job_id" = ?[0m  [["job_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mCauseJob Load (0.1ms)[0m  [1m[34mSELECT "cause_jobs".* FROM "cause_jobs" WHERE "cause_jobs"."job_id" = ?[0m  [["job_id", "2"]]
+[active_model_serializers]   ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mCause Load (0.1ms)[0m  [1m[34mSELECT "causes".* FROM "causes" INNER JOIN "cause_jobs" ON "causes"."id" = "cause_jobs"."cause_id" WHERE "cause_jobs"."job_id" = ?[0m  [["job_id", "2"]]
+[active_model_serializers]   ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mRoletype Load (0.1ms)[0m  [1m[34mSELECT "roletypes".* FROM "roletypes" WHERE "roletypes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers] No serializer found for resource: #<JobTask id: 1, complete: nil, job_id: 1, task_id: 1, created_at: "2020-07-29 06:40:52", updated_at: "2020-07-29 06:40:52">
+[active_model_serializers] No serializer found for resource: #<CauseJob id: 1, cause_id: "1", job_id: "1", created_at: "2020-07-29 06:41:49", updated_at: "2020-07-29 06:41:49">
+[active_model_serializers] No serializer found for resource: #<JobTask id: 2, complete: nil, job_id: 2, task_id: 1, created_at: "2020-07-29 06:40:52", updated_at: "2020-07-29 06:40:52">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (94.77ms)
+Completed 200 OK in 144ms (Views: 104.5ms | ActiveRecord: 6.8ms | Allocations: 77105)
+
+
+Started GET "/api/v1/jobs" for ::1 at 2020-07-29 16:23:26 -0400
+Processing by Api::V1::JobsController#index as HTML
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mJobTask Load (0.1ms)[0m  [1m[34mSELECT "job_tasks".* FROM "job_tasks" WHERE "job_tasks"."job_id" = ?[0m  [["job_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers] No serializer found for resource: #<JobTask id: 1, complete: nil, job_id: 1, task_id: 1, created_at: "2020-07-29 06:40:52", updated_at: "2020-07-29 06:40:52">
+[active_model_serializers]   [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" INNER JOIN "job_tasks" ON "tasks"."id" = "job_tasks"."task_id" WHERE "job_tasks"."job_id" = ?[0m  [["job_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mCauseJob Load (0.2ms)[0m  [1m[34mSELECT "cause_jobs".* FROM "cause_jobs" WHERE "cause_jobs"."job_id" = ?[0m  [["job_id", "1"]]
+[active_model_serializers]   ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers] No serializer found for resource: #<CauseJob id: 1, cause_id: "1", job_id: "1", created_at: "2020-07-29 06:41:49", updated_at: "2020-07-29 06:41:49">
+[active_model_serializers]   [1m[36mCause Load (0.1ms)[0m  [1m[34mSELECT "causes".* FROM "causes" INNER JOIN "cause_jobs" ON "causes"."id" = "cause_jobs"."cause_id" WHERE "cause_jobs"."job_id" = ?[0m  [["job_id", "1"]]
+[active_model_serializers]   ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mRoletype Load (0.1ms)[0m  [1m[34mSELECT "roletypes".* FROM "roletypes" WHERE "roletypes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mJobTask Load (0.2ms)[0m  [1m[34mSELECT "job_tasks".* FROM "job_tasks" WHERE "job_tasks"."job_id" = ?[0m  [["job_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers] No serializer found for resource: #<JobTask id: 2, complete: nil, job_id: 2, task_id: 1, created_at: "2020-07-29 06:40:52", updated_at: "2020-07-29 06:40:52">
+[active_model_serializers]   [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" INNER JOIN "job_tasks" ON "tasks"."id" = "job_tasks"."task_id" WHERE "job_tasks"."job_id" = ?[0m  [["job_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mCauseJob Load (0.1ms)[0m  [1m[34mSELECT "cause_jobs".* FROM "cause_jobs" WHERE "cause_jobs"."job_id" = ?[0m  [["job_id", "2"]]
+[active_model_serializers]   ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mCause Load (0.1ms)[0m  [1m[34mSELECT "causes".* FROM "causes" INNER JOIN "cause_jobs" ON "causes"."id" = "cause_jobs"."cause_id" WHERE "cause_jobs"."job_id" = ?[0m  [["job_id", "2"]]
+[active_model_serializers]   ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mRoletype Load (0.1ms)[0m  [1m[34mSELECT "roletypes".* FROM "roletypes" WHERE "roletypes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers] No serializer found for resource: #<JobTask id: 1, complete: nil, job_id: 1, task_id: 1, created_at: "2020-07-29 06:40:52", updated_at: "2020-07-29 06:40:52">
+[active_model_serializers] No serializer found for resource: #<CauseJob id: 1, cause_id: "1", job_id: "1", created_at: "2020-07-29 06:41:49", updated_at: "2020-07-29 06:41:49">
+[active_model_serializers] No serializer found for resource: #<JobTask id: 2, complete: nil, job_id: 2, task_id: 1, created_at: "2020-07-29 06:40:52", updated_at: "2020-07-29 06:40:52">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (32.39ms)
+Completed 200 OK in 35ms (Views: 32.5ms | ActiveRecord: 1.8ms | Allocations: 20380)
+
+
+Started GET "/api/v1/jobs" for ::1 at 2020-07-29 16:25:36 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::JobsController#index as HTML
+  [1m[36mJob Load (0.7ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mJobTask Load (0.6ms)[0m  [1m[34mSELECT "job_tasks".* FROM "job_tasks" WHERE "job_tasks"."job_id" = ?[0m  [["job_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers] No serializer found for resource: #<JobTask id: 1, complete: nil, job_id: 1, task_id: 1, created_at: "2020-07-29 06:40:52", updated_at: "2020-07-29 06:40:52">
+[active_model_serializers]   [1m[36mTask Load (1.0ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" INNER JOIN "job_tasks" ON "tasks"."id" = "job_tasks"."task_id" WHERE "job_tasks"."job_id" = ?[0m  [["job_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mCauseJob Load (0.6ms)[0m  [1m[34mSELECT "cause_jobs".* FROM "cause_jobs" WHERE "cause_jobs"."job_id" = ?[0m  [["job_id", "1"]]
+[active_model_serializers]   ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers] No serializer found for resource: #<CauseJob id: 1, cause_id: "1", job_id: "1", created_at: "2020-07-29 06:41:49", updated_at: "2020-07-29 06:41:49">
+[active_model_serializers]   [1m[36mCause Load (0.7ms)[0m  [1m[34mSELECT "causes".* FROM "causes" INNER JOIN "cause_jobs" ON "causes"."id" = "cause_jobs"."cause_id" WHERE "cause_jobs"."job_id" = ?[0m  [["job_id", "1"]]
+[active_model_serializers]   ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mCompany Load (0.7ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mRoletype Load (0.6ms)[0m  [1m[34mSELECT "roletypes".* FROM "roletypes" WHERE "roletypes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mJobTask Load (0.2ms)[0m  [1m[34mSELECT "job_tasks".* FROM "job_tasks" WHERE "job_tasks"."job_id" = ?[0m  [["job_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers] No serializer found for resource: #<JobTask id: 2, complete: nil, job_id: 2, task_id: 1, created_at: "2020-07-29 06:40:52", updated_at: "2020-07-29 06:40:52">
+[active_model_serializers]   [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" INNER JOIN "job_tasks" ON "tasks"."id" = "job_tasks"."task_id" WHERE "job_tasks"."job_id" = ?[0m  [["job_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mCauseJob Load (0.1ms)[0m  [1m[34mSELECT "cause_jobs".* FROM "cause_jobs" WHERE "cause_jobs"."job_id" = ?[0m  [["job_id", "2"]]
+[active_model_serializers]   ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mCause Load (0.1ms)[0m  [1m[34mSELECT "causes".* FROM "causes" INNER JOIN "cause_jobs" ON "causes"."id" = "cause_jobs"."cause_id" WHERE "cause_jobs"."job_id" = ?[0m  [["job_id", "2"]]
+[active_model_serializers]   ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mRoletype Load (0.1ms)[0m  [1m[34mSELECT "roletypes".* FROM "roletypes" WHERE "roletypes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers] No serializer found for resource: #<JobTask id: 1, complete: nil, job_id: 1, task_id: 1, created_at: "2020-07-29 06:40:52", updated_at: "2020-07-29 06:40:52">
+[active_model_serializers] No serializer found for resource: #<CauseJob id: 1, cause_id: "1", job_id: "1", created_at: "2020-07-29 06:41:49", updated_at: "2020-07-29 06:41:49">
+[active_model_serializers] No serializer found for resource: #<JobTask id: 2, complete: nil, job_id: 2, task_id: 1, created_at: "2020-07-29 06:40:52", updated_at: "2020-07-29 06:40:52">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (97.8ms)
+Completed 200 OK in 116ms (Views: 100.0ms | ActiveRecord: 9.7ms | Allocations: 78813)
+
+
+Started GET "/api/v1/jobs" for ::1 at 2020-07-29 16:29:12 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::JobsController#index as HTML
+  [1m[36mJob Load (0.6ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mJobTask Load (0.5ms)[0m  [1m[34mSELECT "job_tasks".* FROM "job_tasks" WHERE "job_tasks"."job_id" = ?[0m  [["job_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" INNER JOIN "job_tasks" ON "tasks"."id" = "job_tasks"."task_id" WHERE "job_tasks"."job_id" = ?[0m  [["job_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mCauseJob Load (0.4ms)[0m  [1m[34mSELECT "cause_jobs".* FROM "cause_jobs" WHERE "cause_jobs"."job_id" = ?[0m  [["job_id", "1"]]
+[active_model_serializers]   ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mCause Load (0.7ms)[0m  [1m[34mSELECT "causes".* FROM "causes" INNER JOIN "cause_jobs" ON "causes"."id" = "cause_jobs"."cause_id" WHERE "cause_jobs"."job_id" = ?[0m  [["job_id", "1"]]
+[active_model_serializers]   ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mRoletype Load (1.6ms)[0m  [1m[34mSELECT "roletypes".* FROM "roletypes" WHERE "roletypes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mJobTask Load (0.3ms)[0m  [1m[34mSELECT "job_tasks".* FROM "job_tasks" WHERE "job_tasks"."job_id" = ?[0m  [["job_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" INNER JOIN "job_tasks" ON "tasks"."id" = "job_tasks"."task_id" WHERE "job_tasks"."job_id" = ?[0m  [["job_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mCauseJob Load (0.1ms)[0m  [1m[34mSELECT "cause_jobs".* FROM "cause_jobs" WHERE "cause_jobs"."job_id" = ?[0m  [["job_id", "2"]]
+[active_model_serializers]   ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mCause Load (0.1ms)[0m  [1m[34mSELECT "causes".* FROM "causes" INNER JOIN "cause_jobs" ON "causes"."id" = "cause_jobs"."cause_id" WHERE "cause_jobs"."job_id" = ?[0m  [["job_id", "2"]]
+[active_model_serializers]   ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mRoletype Load (0.1ms)[0m  [1m[34mSELECT "roletypes".* FROM "roletypes" WHERE "roletypes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (127.88ms)
+Completed 200 OK in 147ms (Views: 129.3ms | ActiveRecord: 12.1ms | Allocations: 68713)
+
+
+Started GET "/api/v1/jobs" for ::1 at 2020-07-29 16:29:46 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::JobsController#index as HTML
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mJobTask Load (0.1ms)[0m  [1m[34mSELECT "job_tasks".* FROM "job_tasks" WHERE "job_tasks"."job_id" = ?[0m  [["job_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" INNER JOIN "job_tasks" ON "tasks"."id" = "job_tasks"."task_id" WHERE "job_tasks"."job_id" = ?[0m  [["job_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mCauseJob Load (0.1ms)[0m  [1m[34mSELECT "cause_jobs".* FROM "cause_jobs" WHERE "cause_jobs"."job_id" = ?[0m  [["job_id", "1"]]
+[active_model_serializers]   ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mCause Load (0.2ms)[0m  [1m[34mSELECT "causes".* FROM "causes" INNER JOIN "cause_jobs" ON "causes"."id" = "cause_jobs"."cause_id" WHERE "cause_jobs"."job_id" = ?[0m  [["job_id", "1"]]
+[active_model_serializers]   ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mRoletype Load (0.1ms)[0m  [1m[34mSELECT "roletypes".* FROM "roletypes" WHERE "roletypes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mJobTask Load (0.1ms)[0m  [1m[34mSELECT "job_tasks".* FROM "job_tasks" WHERE "job_tasks"."job_id" = ?[0m  [["job_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" INNER JOIN "job_tasks" ON "tasks"."id" = "job_tasks"."task_id" WHERE "job_tasks"."job_id" = ?[0m  [["job_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mCauseJob Load (0.1ms)[0m  [1m[34mSELECT "cause_jobs".* FROM "cause_jobs" WHERE "cause_jobs"."job_id" = ?[0m  [["job_id", "2"]]
+[active_model_serializers]   ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mCause Load (0.1ms)[0m  [1m[34mSELECT "causes".* FROM "causes" INNER JOIN "cause_jobs" ON "causes"."id" = "cause_jobs"."cause_id" WHERE "cause_jobs"."job_id" = ?[0m  [["job_id", "2"]]
+[active_model_serializers]   ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mRoletype Load (0.1ms)[0m  [1m[34mSELECT "roletypes".* FROM "roletypes" WHERE "roletypes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (174.69ms)
+Completed 200 OK in 189ms (Views: 176.8ms | ActiveRecord: 7.7ms | Allocations: 68658)
+
+
+Started GET "/api/v1/jobs" for ::1 at 2020-07-29 16:30:22 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::JobsController#index as HTML
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mJobTask Load (0.2ms)[0m  [1m[34mSELECT "job_tasks".* FROM "job_tasks" WHERE "job_tasks"."job_id" = ?[0m  [["job_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" INNER JOIN "job_tasks" ON "tasks"."id" = "job_tasks"."task_id" WHERE "job_tasks"."job_id" = ?[0m  [["job_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mCauseJob Load (0.1ms)[0m  [1m[34mSELECT "cause_jobs".* FROM "cause_jobs" WHERE "cause_jobs"."job_id" = ?[0m  [["job_id", "1"]]
+[active_model_serializers]   ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mCause Load (0.2ms)[0m  [1m[34mSELECT "causes".* FROM "causes" INNER JOIN "cause_jobs" ON "causes"."id" = "cause_jobs"."cause_id" WHERE "cause_jobs"."job_id" = ?[0m  [["job_id", "1"]]
+[active_model_serializers]   ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mRoletype Load (0.2ms)[0m  [1m[34mSELECT "roletypes".* FROM "roletypes" WHERE "roletypes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mJobTask Load (0.1ms)[0m  [1m[34mSELECT "job_tasks".* FROM "job_tasks" WHERE "job_tasks"."job_id" = ?[0m  [["job_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" INNER JOIN "job_tasks" ON "tasks"."id" = "job_tasks"."task_id" WHERE "job_tasks"."job_id" = ?[0m  [["job_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mCauseJob Load (0.1ms)[0m  [1m[34mSELECT "cause_jobs".* FROM "cause_jobs" WHERE "cause_jobs"."job_id" = ?[0m  [["job_id", "2"]]
+[active_model_serializers]   ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mCause Load (0.1ms)[0m  [1m[34mSELECT "causes".* FROM "causes" INNER JOIN "cause_jobs" ON "causes"."id" = "cause_jobs"."cause_id" WHERE "cause_jobs"."job_id" = ?[0m  [["job_id", "2"]]
+[active_model_serializers]   ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mRoletype Load (0.1ms)[0m  [1m[34mSELECT "roletypes".* FROM "roletypes" WHERE "roletypes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (83.7ms)
+Completed 200 OK in 103ms (Views: 91.9ms | ActiveRecord: 5.3ms | Allocations: 68694)
+
+
+Started GET "/api/v1/jobs" for ::1 at 2020-07-29 16:31:16 -0400
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::JobsController#index as HTML
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mJobTask Load (0.1ms)[0m  [1m[34mSELECT "job_tasks".* FROM "job_tasks" WHERE "job_tasks"."job_id" = ?[0m  [["job_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" INNER JOIN "job_tasks" ON "tasks"."id" = "job_tasks"."task_id" WHERE "job_tasks"."job_id" = ?[0m  [["job_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mCauseJob Load (0.1ms)[0m  [1m[34mSELECT "cause_jobs".* FROM "cause_jobs" WHERE "cause_jobs"."job_id" = ?[0m  [["job_id", "1"]]
+[active_model_serializers]   ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mCause Load (0.1ms)[0m  [1m[34mSELECT "causes".* FROM "causes" INNER JOIN "cause_jobs" ON "causes"."id" = "cause_jobs"."cause_id" WHERE "cause_jobs"."job_id" = ?[0m  [["job_id", "1"]]
+[active_model_serializers]   ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mRoletype Load (0.1ms)[0m  [1m[34mSELECT "roletypes".* FROM "roletypes" WHERE "roletypes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mJobTask Load (0.2ms)[0m  [1m[34mSELECT "job_tasks".* FROM "job_tasks" WHERE "job_tasks"."job_id" = ?[0m  [["job_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" INNER JOIN "job_tasks" ON "tasks"."id" = "job_tasks"."task_id" WHERE "job_tasks"."job_id" = ?[0m  [["job_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mCauseJob Load (0.2ms)[0m  [1m[34mSELECT "cause_jobs".* FROM "cause_jobs" WHERE "cause_jobs"."job_id" = ?[0m  [["job_id", "2"]]
+[active_model_serializers]   ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mCause Load (0.1ms)[0m  [1m[34mSELECT "causes".* FROM "causes" INNER JOIN "cause_jobs" ON "causes"."id" = "cause_jobs"."cause_id" WHERE "cause_jobs"."job_id" = ?[0m  [["job_id", "2"]]
+[active_model_serializers]   ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mRoletype Load (0.2ms)[0m  [1m[34mSELECT "roletypes".* FROM "roletypes" WHERE "roletypes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (94.67ms)
+Completed 200 OK in 115ms (Views: 105.1ms | ActiveRecord: 5.7ms | Allocations: 69054)
+
+
+Started GET "/api/v1/jobs" for ::1 at 2020-07-29 16:31:43 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::JobsController#index as HTML
+  [1m[36mJob Load (0.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mJobTask Load (0.2ms)[0m  [1m[34mSELECT "job_tasks".* FROM "job_tasks" WHERE "job_tasks"."job_id" = ?[0m  [["job_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" INNER JOIN "job_tasks" ON "tasks"."id" = "job_tasks"."task_id" WHERE "job_tasks"."job_id" = ?[0m  [["job_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mCauseJob Load (0.1ms)[0m  [1m[34mSELECT "cause_jobs".* FROM "cause_jobs" WHERE "cause_jobs"."job_id" = ?[0m  [["job_id", "1"]]
+[active_model_serializers]   ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mCause Load (0.1ms)[0m  [1m[34mSELECT "causes".* FROM "causes" INNER JOIN "cause_jobs" ON "causes"."id" = "cause_jobs"."cause_id" WHERE "cause_jobs"."job_id" = ?[0m  [["job_id", "1"]]
+[active_model_serializers]   ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mRoletype Load (0.1ms)[0m  [1m[34mSELECT "roletypes".* FROM "roletypes" WHERE "roletypes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mJobTask Load (0.2ms)[0m  [1m[34mSELECT "job_tasks".* FROM "job_tasks" WHERE "job_tasks"."job_id" = ?[0m  [["job_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" INNER JOIN "job_tasks" ON "tasks"."id" = "job_tasks"."task_id" WHERE "job_tasks"."job_id" = ?[0m  [["job_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mCauseJob Load (0.2ms)[0m  [1m[34mSELECT "cause_jobs".* FROM "cause_jobs" WHERE "cause_jobs"."job_id" = ?[0m  [["job_id", "2"]]
+[active_model_serializers]   ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mCause Load (0.1ms)[0m  [1m[34mSELECT "causes".* FROM "causes" INNER JOIN "cause_jobs" ON "causes"."id" = "cause_jobs"."cause_id" WHERE "cause_jobs"."job_id" = ?[0m  [["job_id", "2"]]
+[active_model_serializers]   ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mCompany Load (0.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mRoletype Load (0.2ms)[0m  [1m[34mSELECT "roletypes".* FROM "roletypes" WHERE "roletypes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/jobs_controller.rb:4:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (89.26ms)
+Completed 200 OK in 103ms (Views: 93.0ms | ActiveRecord: 5.9ms | Allocations: 68849)
+
+
