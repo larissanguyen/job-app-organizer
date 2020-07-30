@@ -1,125 +1,170 @@
 <html>
-    <head>
-        <title>Front-end</title>
-        <!-- <link rel="stylesheet" href="index.css" /> -->
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<head>
+		<title>Front-end</title>
+		<!-- <link rel="stylesheet" href="index.css" /> -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
-    </head>
-    <body>
-   		<div class="container">
-   			<br>
-   			<button id="company-view" type="button" class="btn btn-primary">See Companies</button>
-   			<button id="job-view" type="button" class="btn btn-primary">See Jobs</button> 	
-   		</div>
-   		
-
-    	<div class="container">
-    		<div id="list"></div>
-    	</div> 
-
-    	<div class="container" id="add-job-div">
-	      <form id="add-job-form">
-	        <h3>Create a job!</h3>
-
-	        <input
-	          type="text"
-	          name="title"
-	          value=""
-	          placeholder="Enter the job title..."
-	          class="input-text"
-	        />
-	        <!-- <br> -->
-	        <input
-	          type="text"
-	          name="description"
-	          value=""
-	          placeholder="Enter the job description..."
-	          class="input-text"
-	        />
-	        <!-- <br> -->
-	        <input
-	          type="text"
-	          name="link"
-	          value=""
-	          placeholder="Enter the job listing URL..."
-	          class="input-text"
-	        />
-			<div class="select-company-div">
-			    <label for="company">Company</label>
-				<select class="form-control" id="select-company">
-					<option value="4">Google</option>
-					<option value="5">Bayes Impact</option>
-					<option value="6">BlueRidge Labs</option>
-				</select>
-			</div>
-	        <div class="select-roletype-div">
-			    <label for="roletype">Role Type</label>
-				<select class="form-control" id="select-roletype">
-					<option value="4">product</option>
-					<option value="5">dev</option>
-					<option value="6">other</option>
-				</select>
-			</div>
-	        <br>
-	        <input
-	          type="submit"
-	          name="submit"
-	          value="Create New Job"
-	          class="submit"
-	        />
-	      </form>
-	    </div>
-
-	    <div class="container" id="add-company-div">
-	      <form id="add-company-form">
-	        <h3>Add a company!</h3>
-
-	        <input
-	          type="text"
-	          name="name"
-	          value=""
-	          placeholder="Enter the company name..."
-	          class="input-text"
-	        />
-	        <!-- <br> -->
-	        <input
-	          type="text"
-	          name="description"
-	          value=""
-	          placeholder="Enter the company description..."
-	          class="input-text"
-	        />
-	        <!-- <br> -->
-	        <input
-	          type="text"
-	          name="link"
-	          value=""
-	          placeholder="Enter the company website URL..."
-	          class="input-text"
-	        />
-	        <br>
-	        <input
-	          type="submit"
-	          name="submit"
-	          value="Create New Company"
-	          class="submit"
-	        />
-	      </form>
-	    </div>
+	</head>
+	<body>
+		<div class="container">
+			<br>
+			<button id="company-view" type="button" class="btn btn-primary">See Companies</button>
+			<button id="job-view" type="button" class="btn btn-primary">See Jobs</button> 	
+		</div>
 
 
-    	<!-- <div class="container" id="add-job-div">
-    		<button type="button" class="btn btn-primary" id="new-job-btn">New Job</button>
-    	</div> -->
+		<div class="container">
+			<div id="list"></div>
+		</div> 
+
+		<div class="container" id="add-job-div">
+			<form id="add-job-form">
+				<h3>Create a job!</h3>
+
+				<div class="form-group row">
+					<label for="job-title" class="col-sm-2 col-form-label">Job:</label>
+					<div class="col-sm-10">
+						<input
+						type="text"
+						name="title"
+						value=""
+						placeholder="Enter the job title..."
+						class="input-text form-control"
+						id="job-title"
+						/>
+					</div>
+				</div>
+				<!-- <br> -->
+				<div class="form-group row">
+					<label for="job-description" class="col-sm-2 col-form-label">Description:</label>
+					<div class="col-sm-10">
+						<input
+						type="text"
+						name="description"
+						value=""
+						placeholder="Enter the job description..."
+						class="input-text form-control"
+						id="job-description"
+						/>
+					</div>
+				</div>
+				<!-- <br> -->
+				<div class="form-group row">
+					<label for="job-URL" class="col-sm-2 col-form-label">Link:</label>
+					<div class="col-sm-10">
+						<input
+						type="text"
+						name="link"
+						value=""
+						placeholder="Enter the job URL..."
+						class="input-text form-control"
+						id="job-URL"
+						/>
+					</div>
+				</div>
+				<div class="select-company-div form-group row">
+					<label for="company" class="col-sm-2 col-form-label">Company</label>
+					<div class="col-sm-10">
+						<select class="form-control" id="select-company">
+							<option value="4">Google</option>
+							<option value="5">Bayes Impact</option>
+							<option value="6">BlueRidge Labs</option>
+						</select>
+					</div>
+					
+				</div>
+				<div class="select-roletype-div form-group row">
+					<label for="roletype" class="col-sm-2 col-form-label">Role Type</label>
+					<div class="col-sm-10">
+						<select class="form-control" id="select-roletype">
+							<option value="4">product</option>
+							<option value="5">dev</option>
+							<option value="6">other</option>
+						</select>
+					</div>
+				</div>
+				<br>
+				<input
+				type="submit"
+				name="submit"
+				value="Create New Job"
+				class="submit btn btn-primary"
+				/>
+			</form>
+		</div>
+
+		<div class="container" id="add-company-div">
+			<form id="add-company-form">
+				<h3>Add a company!</h3>
+
+				<div class="form-group row">
+					<label for="company-name" class="col-sm-2 col-form-label">Company:</label>
+					<div class="col-sm-10">
+						<input
+							type="text"
+							name="name"
+							value=""
+							placeholder="Enter the company name..."
+							id="company-name"
+							class="input-text form-control"
+							aria-label="name" aria-describedby="basic-addon1"
+						/>
+					</div>
+				</div>
+				
+				<div class="form-group row">
+					<label for="company-description" class="col-sm-2 col-form-label">About:</label>
+					<div class="col-sm-10">
+						<textarea
+							type="text"
+							name="description"
+							value=""
+							placeholder="Enter the company description..."
+							class="input-text form-control"
+							id="company-description"
+							>
+						</textarea>
+					</div>
+				</div>
 
 
-        <script src="index.js"></script>
+				<div class="form-group row">
+					<label for="company-url" class="col-sm-2 col-form-label">Link:</label>
+					<div class="col-sm-10">
+						<input
+							type="text"
+							name="link"
+							value=""
+							placeholder="Enter the company website URL..."
+							class="input-text form-control"
+							id="company-url"
+						/>
+					</div>
+				</div>
+				<div class="form-group">
+					<input
+						type="submit"
+						name="submit"
+						value="Create New Company"
+						class="submit btn btn-primary"
+					/>
+				</div>
+			</form>
+		</div>
 
-        <!-- Scripts for Bootstrap -->
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+
+		<!-- <div class="container" id="add-job-div">
+			<button type="button" class="btn btn-primary" id="new-job-btn">New Job</button>
+		</div> -->
+
+
+		<script src="index.js"></script>
+
+		<!-- Scripts for Bootstrap -->
+		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 
-    </body>
+  </body>
 </html>

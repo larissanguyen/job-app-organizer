@@ -150,7 +150,6 @@ function appendCompany(company){
 
   // ADD EVENT LISTENER FOR TASKS HERE
 
-  const jobListDiv = ce("div")
   const ul = ce("ul")
   company.jobs.forEach(job => {
     const li = ce("li")
@@ -158,6 +157,7 @@ function appendCompany(company){
     ul.append(li)
   })
 
+  const jobListDiv = ce("div")
   jobListDiv.append(jobHeader, ul)
 
   const deleteBtn = ce("btn")
@@ -166,6 +166,7 @@ function appendCompany(company){
   deleteBtn.innerText = "Delete"
 
   const div = ce("div")
+  div.classList.add("card")
   const br = ce("br")
   div.append(a, p, jobListDiv, deleteBtn, br)
 
