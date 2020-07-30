@@ -47,6 +47,7 @@ function appendJob(job){
 
   const taskHeader = ce("h5")
   taskHeader.innerText = "Tasks"
+  taskHeader.classList.add("card-subtitle")
 
   // ADD EVENT LISTENER FOR TASKS HERE
 
@@ -65,13 +66,33 @@ function appendJob(job){
   deleteBtn.classList.add("btn-danger")
   deleteBtn.innerText = "Delete"
 
+  // <div class="card">
+  //   <div class="card-body">
+  //   <a href="https://careers.google.com/jobs/" target="_blank">
+  //       <h3 class="card-title">Google</h3>
+  //   </a>
+  //   <p class="card-text">Description: search engine</p>
+  //   <div>
+  //       <h5 class="card-subtitle">Jobs</h5>
+  //       <ul><li class="card-text">associate product manager</li></ul>
+  //   </div>
+  //   <btn class="btn btn-danger">Delete</btn><br></div>
+  // </div>
+
   const div = ce("div")
+  div.classList.add("card")
+  const innerDiv = ce("div")
+  innerDiv.classList.add("card-body")
   const br = ce("br")
-  div.append(a, companyLabel, p, taskListDiv, deleteBtn, br)
-  
+
+  jobLabel.classList.add("card-title")
+  p.classList.add("card-text")
+
+  innerDiv.append(a, companyLabel, p, taskListDiv, deleteBtn)
+  div.append(innerDiv)
 
   const jobDiv = document.querySelector("div#list")
-  jobDiv.append(div)
+  jobDiv.append(div, br)
 
   deleteBtn.addEventListener("click", () => {
     fetch('http://localhost:3000/api/v1/jobs/' + job.id, {
@@ -147,8 +168,7 @@ function appendCompany(company){
 
   const jobHeader = ce("h5")
   jobHeader.innerText = "Jobs"
-
-  // ADD EVENT LISTENER FOR TASKS HERE
+  jobHeader.classList.add("card-subtitle")
 
   const ul = ce("ul")
   company.jobs.forEach(job => {
@@ -165,13 +185,22 @@ function appendCompany(company){
   deleteBtn.classList.add("btn-danger")
   deleteBtn.innerText = "Delete"
 
+
   const div = ce("div")
   div.classList.add("card")
+  const innerDiv = ce("div")
+  innerDiv.classList.add("card-body")
+  companyLabel.classList.add("card-title")
+  p.classList.add("card-text")
   const br = ce("br")
-  div.append(a, p, jobListDiv, deleteBtn, br)
+  
+  innerDiv.append(a, p, jobListDiv, deleteBtn)
+  div.append(innerDiv)
+
+
 
   const companyDiv = document.querySelector("div#list")
-  companyDiv.append(div)
+  companyDiv.append(div, br)
 
   deleteBtn.addEventListener("click", () => {
     fetch('http://localhost:3000/api/v1/companies/' + company.id, {
