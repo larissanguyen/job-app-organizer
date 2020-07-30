@@ -10956,3 +10956,104 @@ Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 1.2ms | Allocations: 2602)
 
   [1m[35m (1.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
   [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT "companies".* FROM "companies" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCompany Destroy (0.5ms)[0m  [1m[31mDELETE FROM "companies" WHERE "companies"."id" = ?[0m  [["id", 12]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCompany Destroy (0.4ms)[0m  [1m[31mDELETE FROM "companies" WHERE "companies"."id" = ?[0m  [["id", 14]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mRoletype Load (0.6ms)[0m  [1m[34mSELECT "roletypes".* FROM "roletypes"[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoletype Destroy (0.3ms)[0m  [1m[31mDELETE FROM "roletypes" WHERE "roletypes"."id" = ?[0m  [["id", 10]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoletype Destroy (0.3ms)[0m  [1m[31mDELETE FROM "roletypes" WHERE "roletypes"."id" = ?[0m  [["id", 11]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoletype Destroy (0.3ms)[0m  [1m[31mDELETE FROM "roletypes" WHERE "roletypes"."id" = ?[0m  [["id", 12]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCause Load (0.7ms)[0m  [1m[34mSELECT "causes".* FROM "causes"[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCause Destroy (0.4ms)[0m  [1m[31mDELETE FROM "causes" WHERE "causes"."id" = ?[0m  [["id", 13]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCause Destroy (0.3ms)[0m  [1m[31mDELETE FROM "causes" WHERE "causes"."id" = ?[0m  [["id", 14]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCause Destroy (0.3ms)[0m  [1m[31mDELETE FROM "causes" WHERE "causes"."id" = ?[0m  [["id", 15]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCause Destroy (0.4ms)[0m  [1m[31mDELETE FROM "causes" WHERE "causes"."id" = ?[0m  [["id", 16]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTask Load (0.7ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTask Destroy (0.3ms)[0m  [1m[31mDELETE FROM "tasks" WHERE "tasks"."id" = ?[0m  [["id", 10]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTask Destroy (0.3ms)[0m  [1m[31mDELETE FROM "tasks" WHERE "tasks"."id" = ?[0m  [["id", 11]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTask Destroy (0.4ms)[0m  [1m[31mDELETE FROM "tasks" WHERE "tasks"."id" = ?[0m  [["id", 12]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mJob Load (0.7ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mJob Destroy (0.3ms)[0m  [1m[31mDELETE FROM "jobs" WHERE "jobs"."id" = ?[0m  [["id", 13]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mJob Destroy (0.3ms)[0m  [1m[31mDELETE FROM "jobs" WHERE "jobs"."id" = ?[0m  [["id", 14]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCompany Create (1.1ms)[0m  [1m[32mINSERT INTO "companies" ("name", "description", "link", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Google"], ["description", "search engine"], ["link", "https://careers.google.com/jobs/"], ["created_at", "2020-07-30 15:09:51.199539"], ["updated_at", "2020-07-30 15:09:51.199539"]]
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCompany Create (0.4ms)[0m  [1m[32mINSERT INTO "companies" ("name", "description", "link", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Bayes Impact"], ["description", "data science for social good"], ["link", "https://www.bayesimpact.org/en/"], ["created_at", "2020-07-30 15:09:51.206108"], ["updated_at", "2020-07-30 15:09:51.206108"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCompany Create (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "description", "link", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "BlueRidge Labs"], ["description", "incubator for tech for good ventures in NYC"], ["link", "https://labs.robinhood.org/"], ["created_at", "2020-07-30 15:09:51.210518"], ["updated_at", "2020-07-30 15:09:51.210518"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoletype Create (0.3ms)[0m  [1m[32mINSERT INTO "roletypes" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "product"], ["created_at", "2020-07-30 15:09:51.215110"], ["updated_at", "2020-07-30 15:09:51.215110"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoletype Create (0.3ms)[0m  [1m[32mINSERT INTO "roletypes" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "developer"], ["created_at", "2020-07-30 15:09:51.219796"], ["updated_at", "2020-07-30 15:09:51.219796"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRoletype Create (0.3ms)[0m  [1m[32mINSERT INTO "roletypes" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "other"], ["created_at", "2020-07-30 15:09:51.224165"], ["updated_at", "2020-07-30 15:09:51.224165"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCause Create (0.3ms)[0m  [1m[32mINSERT INTO "causes" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "none"], ["created_at", "2020-07-30 15:09:51.227793"], ["updated_at", "2020-07-30 15:09:51.227793"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCause Create (0.3ms)[0m  [1m[32mINSERT INTO "causes" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "environmental justice"], ["created_at", "2020-07-30 15:09:51.231932"], ["updated_at", "2020-07-30 15:09:51.231932"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCause Create (0.3ms)[0m  [1m[32mINSERT INTO "causes" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "community organizing"], ["created_at", "2020-07-30 15:09:51.236035"], ["updated_at", "2020-07-30 15:09:51.236035"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCause Create (0.3ms)[0m  [1m[32mINSERT INTO "causes" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "racial justice"], ["created_at", "2020-07-30 15:09:51.239606"], ["updated_at", "2020-07-30 15:09:51.239606"]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTask Create (0.4ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "update resume"], ["created_at", "2020-07-30 15:09:51.244943"], ["updated_at", "2020-07-30 15:09:51.244943"]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTask Create (0.3ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "set up an informational interview"], ["created_at", "2020-07-30 15:09:51.250078"], ["updated_at", "2020-07-30 15:09:51.250078"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTask Create (0.5ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "get a referral"], ["created_at", "2020-07-30 15:09:51.254547"], ["updated_at", "2020-07-30 15:09:51.254547"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mJob Create (0.3ms)[0m  [1m[32mINSERT INTO "jobs" ("dateAdded", "title", "description", "link", "roletype_id", "company_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["dateAdded", "2019-08-01"], ["title", "associate product manager"], ["description", "product things"], ["link", "apm"], ["roletype_id", 13], ["company_id", 15], ["created_at", "2020-07-30 15:09:51.322949"], ["updated_at", "2020-07-30 15:09:51.322949"]]
+  [1m[36mJobTask Create (0.2ms)[0m  [1m[32mINSERT INTO "job_tasks" ("complete", "job_id", "task_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["complete", 0], ["job_id", 15], ["task_id", 13], ["created_at", "2020-07-30 15:09:51.325358"], ["updated_at", "2020-07-30 15:09:51.325358"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mJob Create (0.5ms)[0m  [1m[32mINSERT INTO "jobs" ("dateAdded", "title", "description", "link", "roletype_id", "company_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["dateAdded", "2020-06-30"], ["title", "program coordinator"], ["description", "administrative tasks"], ["link", "insert link here"], ["roletype_id", 15], ["company_id", 16], ["created_at", "2020-07-30 15:09:51.333339"], ["updated_at", "2020-07-30 15:09:51.333339"]]
+  [1m[36mJobTask Create (0.2ms)[0m  [1m[32mINSERT INTO "job_tasks" ("complete", "job_id", "task_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["complete", 0], ["job_id", 16], ["task_id", 13], ["created_at", "2020-07-30 15:09:51.336785"], ["updated_at", "2020-07-30 15:09:51.336785"]]
+  [1m[36mJobTask Create (0.1ms)[0m  [1m[32mINSERT INTO "job_tasks" ("complete", "job_id", "task_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["complete", 0], ["job_id", 16], ["task_id", 14], ["created_at", "2020-07-30 15:09:51.338897"], ["updated_at", "2020-07-30 15:09:51.338897"]]
+  [1m[36mJobTask Create (0.1ms)[0m  [1m[32mINSERT INTO "job_tasks" ("complete", "job_id", "task_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["complete", 0], ["job_id", 16], ["task_id", 15], ["created_at", "2020-07-30 15:09:51.340855"], ["updated_at", "2020-07-30 15:09:51.340855"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mJobTask Load (0.3ms)[0m  [1m[34mSELECT "job_tasks".* FROM "job_tasks" LIMIT ?[0m  [["LIMIT", 11]]
