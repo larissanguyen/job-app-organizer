@@ -7,8 +7,15 @@
 
     </head>
     <body>
+   		<div class="container">
+   			<br>
+   			<button id="company-view" type="button" class="btn btn-primary">See Companies</button>
+   			<button id="job-view" type="button" class="btn btn-primary">See Jobs</button> 	
+   		</div>
+   		
+
     	<div class="container">
-    		<div id="job-list"></div>
+    		<div id="list"></div>
     	</div> 
 
     	<div class="container" id="add-job-div">
@@ -63,6 +70,44 @@
 	        />
 	      </form>
 	    </div>
+
+	    <div class="container" id="add-company-div">
+	      <form id="add-company-form">
+	        <h3>Add a company!</h3>
+
+	        <input
+	          type="text"
+	          name="name"
+	          value=""
+	          placeholder="Enter the company name..."
+	          class="input-text"
+	        />
+	        <!-- <br> -->
+	        <input
+	          type="text"
+	          name="description"
+	          value=""
+	          placeholder="Enter the company description..."
+	          class="input-text"
+	        />
+	        <!-- <br> -->
+	        <input
+	          type="text"
+	          name="link"
+	          value=""
+	          placeholder="Enter the company website URL..."
+	          class="input-text"
+	        />
+	        <br>
+	        <input
+	          type="submit"
+	          name="submit"
+	          value="Create New Company"
+	          class="submit"
+	        />
+	      </form>
+	    </div>
+
 
     	<!-- <div class="container" id="add-job-div">
     		<button type="button" class="btn btn-primary" id="new-job-btn">New Job</button>

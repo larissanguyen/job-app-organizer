@@ -3,10 +3,12 @@ Rails.application.routes.draw do
   namespace :api do 
     namespace :v1 do 
       resources :jobs
-      # resources :tasks
-      # resources :roletypes
-      # resources :companies
-      # resources :causes
+      resources :tasks
+      resources :roletypes
+      resources :companies
+      resources :causes
+      # resources :causeJobs
+      # resources :jobTasks
     end
   end
 end
